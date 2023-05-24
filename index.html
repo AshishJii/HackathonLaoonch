@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hackAthon</title>
+  <style>
+    /* CSS for page container */
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    
+    /* CSS for box container */
+    .box-container {
+      position: relative;
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    /* CSS for heading */
+    .heading {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+    
+    /* CSS for description */
+    .description {
+      font-size: 18px;
+      color: #777777;
+      margin-bottom: 30px;
+    }
+    
+    /* CSS for button */
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #ffffff;
+      font-size: 20px;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    
+    /* CSS for hover effect on button */
+    .button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* CSS for read more icon */
+    .read-more-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      color: #000;
+      border-radius: 50%;
+      font-size: 24px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* CSS for hover effect on read more icon */
+    .read-more-icon:hover {
+      background-color: #bbb;
+    }
+    
+    /* CSS for read more dialog */
+    .read-more-dialog {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: left;
+      z-index: 1;
+      display: none;
+    }
+    
+    /* CSS to show read more dialog on hover */
+    .read-more-icon:hover + .read-more-dialog {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="box-container">
+      <h1 class="heading">Hackathon Launcher</h1>
+      <p class="description">Dumb program to save 2 seconds of your life</p>
+      <a class="button" onclick = "redirect()" >Launch</a>
+      <div class="read-more-icon">&#9432;</div>
+      <div class="read-more-dialog">
+        <p>Auto fetches the current date from your PotatoPC.</p>
+        <p>test</p>
+      </div>
+    </div>
+  </div>
+  
+ <script>
+   function redirect(){
+	  const date = new Date();
+	  var dat = ('0' + date.getDate()).slice(-2);
+	  var mon = date.toLocaleString('default',{month: 'short'}).toLowerCase();
+ 	  window.location.href="https://www.hackerrank.com/h-cs1b-"+dat+mon;
+  }
+ </script>
+  
+</body>
+</html>
